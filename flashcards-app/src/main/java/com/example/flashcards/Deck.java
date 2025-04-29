@@ -5,21 +5,31 @@ import java.util.List;
 
 public class Deck {
     private String nom;
+    private int nombreQuestions;
     private List<FlashCard> flashcards;
-    private List<String> listDeck = new ArrayList<>();
 
-    public Deck(String nom, List<FlashCard> flashcards) {
+    public Deck(String nom, int nombreQuestions) {
         this.nom = nom;
+        this.nombreQuestions = nombreQuestions;
+        this.flashcards = new ArrayList<>();
+    }
+
+    public Deck(String nom, int nombreQuestions, List<FlashCard> flashcards) {
+        this.nom = nom;
+        this.nombreQuestions = nombreQuestions;
         this.flashcards = flashcards;
-        listDeck.add(nom);
     }
 
     public String getNom() {
-        return this.nom;
+        return nom;
     }
 
-    public List<FlashCard> getFlashcardList() {
-        return this.flashcards;
+    public int getNombreQuestions() {
+        return nombreQuestions;
+    }
+
+    public List<FlashCard> getFlashcards() {
+        return flashcards;
     }
 
     public void ajouterFlashCard(FlashCard flashCard) {
@@ -28,11 +38,5 @@ public class Deck {
 
     public void supprimerFlashCard(FlashCard flashCard) {
         flashcards.remove(flashCard);
-    }
-
-    public void listDeck(){
-        for (String deck : listDeck){
-            System.out.println(deck);
-        }
     }
 }
