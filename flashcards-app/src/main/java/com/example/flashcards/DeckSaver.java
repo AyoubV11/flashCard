@@ -53,4 +53,14 @@ public class DeckSaver {
 
         return decks;
     }
+
+    public static List<Deck> getAllDecks() {
+        return loadDecks();  // Charge et renvoie tous les decks depuis le fichier
+    }
+    
+    public static int getNumberOfDecks() {
+        List<Deck> decks = loadDecks();  // Charge tous les decks
+        return decks.size();  // Renvoie le nombre de decks
+    }
+    
 }
