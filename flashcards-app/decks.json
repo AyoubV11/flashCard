@@ -1,75 +1,55 @@
 [
   {
-    "nom": "histoire",
-    "nombreQuestions": 1,
-    "flashcards": [
-      {
-        "question": "date de la revolution francaise ?",
-        "reponse": "1789"
-      }
-    ]
-  },
-  {
-    "nom": "a",
-    "nombreQuestions": 1,
-    "flashcards": [
-      {
-        "question": "a",
-        "reponse": "a"
-      }
-    ]
-  },
-  {
-    "nom": "b",
-    "nombreQuestions": 1,
-    "flashcards": [
-      {
-        "question": "b",
-        "reponse": "b"
-      }
-    ]
-  },
-  {
-    "nom": "g",
-    "nombreQuestions": 1,
-    "flashcards": [
-      {
-        "question": "r",
-        "reponse": "r"
-      }
-    ]
-  },
-  {
-    "nom": "gfd",
-    "nombreQuestions": 1,
-    "flashcards": [
-      {
-        "question": "a",
-        "reponse": "a"
-      }
-    ]
-  },
-  {
-    "nom": "dazd",
-    "nombreQuestions": 1,
-    "flashcards": [
-      {
-        "question": "ds",
-        "reponse": "d"
-      }
-    ]
-  },
-  {
     "nom": "math",
     "nombreQuestions": 2,
     "flashcards": [
       {
-        "question": "2+2",
-        "reponse": "4"
-      },
-      {
         "question": "1+1",
         "reponse": "2"
+      },
+      {
+        "question": "2+2",
+        "reponse": "4"
+      }
+    ]
+  },
+  {
+    "nom": "manel",
+    "nombreQuestions": 1,
+    "flashcards": [
+      {
+        "question": "a",
+        "reponse": "a"
+      }
+    ]
+  },
+  {
+    "nom": "loubna",
+    "nombreQuestions": 1,
+    "flashcards": [
+      {
+        "question": "a",
+        "reponse": "a"
+      }
+    ]
+  },
+  {
+    "nom": "ayoub",
+    "nombreQuestions": 1,
+    "flashcards": [
+      {
+        "question": "a",
+        "reponse": "c"
+      }
+    ]
+  },
+  {
+    "nom": "eteee",
+    "nombreQuestions": 1,
+    "flashcards": [
+      {
+        "question": "a",
+        "reponse": "e"
       }
     ]
   }

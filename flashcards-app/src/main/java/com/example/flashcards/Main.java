@@ -183,6 +183,7 @@ public class Main extends Application {
         stackPane.setMinSize(RECTANGLE_WIDTH, RECTANGLE_HEIGHT);
 
         stackPane.setOnMouseClicked(event -> {
+            ClickDeck(deck);
             System.out.println("Deck sélectionné : " + deck.getNom());
         });
 
@@ -205,8 +206,69 @@ public class Main extends Application {
         Button button = new Button(text);
         return button;
     }
+    public void ClickDeck(Deck d) {
+        Stage stage = new Stage();
+        VBox vbox = new VBox(PADDING);
+    
+        List<FlashCard> flashcards = d.getFlashcards();
+    
+        // Utilisation d’un tableau pour contourner la limitation
+        boolean[] valide = {false};
+    
+        Label questionLabel = new Label();
+        questionLabel.setStyle("-fx-font-size: 20px; -fx-font-weight: bold;");
+    
+        TextField answerField = new TextField();
+        answerField.setPromptText("Entrez votre réponse");
+    
+        Button checkAnswerButton = new Button("Vérifier");
+    
+        Label feedbackLabel = new Label();
+        feedbackLabel.setStyle("-fx-font-size: 16px; -fx-font-weight: normal;");
+    
+        int[] currentIndex = {0};
+    
+        updateQuestion(flashcards, currentIndex[0], questionLabel, feedbackLabel);
+    
+        checkAnswerButton.setOnAction(e -> {
+            String userAnswer = answerField.getText().trim();
+    
+            if (userAnswer.equalsIgnoreCase(flashcards.get(currentIndex[0]).getReponse())) {
+                feedbackLabel.setText("Correct !");
+                valide[0] = true;
+            } else {
+                feedbackLabel.setText("Incorrect, essayez encore.");
+                valide[0] = false;
+            }
+    
+            if (valide[0] && currentIndex[0] < flashcards.size() - 1) {
+                currentIndex[0]++;
+                updateQuestion(flashcards, currentIndex[0], questionLabel, feedbackLabel);
+                answerField.clear();
+            }
+        });
+    
+        vbox.getChildren().addAll(questionLabel, answerField, checkAnswerButton, feedbackLabel);
+    
+        Scene scene = new Scene(vbox, WINDOW_WIDTH, WINDOW_HEIGHT);
+        stage.setTitle(d.getNom());
+        stage.setScene(scene);
+        stage.show();
+    }
+    
+    
+    private void updateQuestion(List<FlashCard> flashcards, int index, Label questionLabel, Label feedbackLabel) {
+        // Mettre à jour la question affichée
+        questionLabel.setText(flashcards.get(index).getQuestion());
+    
+        // Réinitialiser le feedback
+        feedbackLabel.setText("");
+    }
+    
 
     public static void main(String[] args) {
         launch(args);
     }
+
+
 }
